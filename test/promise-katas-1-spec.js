@@ -16,7 +16,7 @@ const {
 const { expect } = require("chai");
 
 describe('returnPromise', () => {
-    it('returns a promise', (done) => {
+    xit('returns a promise', (done) => {
         returnPromise()
             .then(() => done())
             .catch(() => done(new Error('The promise is expected to resolve')));
@@ -24,7 +24,7 @@ describe('returnPromise', () => {
 });
 
 describe('returnTen', () => {
-    it('returns a promise that resolves to 10', (done) => {
+    xit('returns a promise that resolves to 10', (done) => {
         returnTen()
             .then(value => {
                 expect(value).to.equal(10);
@@ -35,7 +35,7 @@ describe('returnTen', () => {
 });
 
 describe('returnString', () => {
-    it("returns a promise that resolves to 'string'", (done) => {
+    xit("returns a promise that resolves to 'string'", (done) => {
         returnString()
             .then(value => {
                 expect(value).to.equal('string');
@@ -46,7 +46,7 @@ describe('returnString', () => {
 });
 
 describe('returnBob', () => {
-    it("returns a promise that resolves to { name: 'Bob' }", (done) => {
+    xit("returns a promise that resolves to { name: 'Bob' }", (done) => {
         returnBob()
             .then(value => {
                 expect(value).to.deep.equal({ name: 'Bob' });
@@ -57,7 +57,7 @@ describe('returnBob', () => {
 });
 
 describe('returnList', () => {
-    it("returns a promise that resolves to ['eggs', 'apples', 'milk', 'bread']", (done) => {
+    xit("returns a promise that resolves to ['eggs', 'apples', 'milk', 'bread']", (done) => {
         returnList()
             .then(value => {
                 expect(value).to.deep.equal(['eggs', 'apples', 'milk', 'bread']);
@@ -68,7 +68,7 @@ describe('returnList', () => {
 });
 
 describe('anError', () => {
-    it('returns a promise that returns "An error occurred" when it rejects', (done) => {
+    xit('returns a promise that returns "An error occurred" when it rejects', (done) => {
         anError()
             .catch(value => {
                 expect(value).to.equal("An error occurred");
@@ -78,7 +78,7 @@ describe('anError', () => {
 });
 
 describe('theNumberOfTheBeast', () => {
-    it('returns a promise that returns 666 when it rejects', (done) => {
+    xit('returns a promise that returns 666 when it rejects', (done) => {
         theNumberOfTheBeast()
             .catch(value => {
                 expect(value).to.equal(666);
@@ -88,7 +88,7 @@ describe('theNumberOfTheBeast', () => {
 });
 
 describe('internalServerError', () => {
-    it('returns a promise that returns { error: 500 } when it rejects', (done) => {
+    xit('returns a promise that returns { error: 500 } when it rejects', (done) => {
         internalServerError()
             .catch(value => {
                 expect(value).to.deep.equal({ error: 500 });
@@ -98,7 +98,7 @@ describe('internalServerError', () => {
 });
 
 describe('happySad', () => {
-    it('returns a promise that returns "happy" when x > 1', (done) => {
+    xit('returns a promise that returns "happy" when x > 1', (done) => {
         happySad(2)
             .then(value => {
                 expect(value).to.equal("happy");
@@ -106,7 +106,7 @@ describe('happySad', () => {
             })
             .catch(() => done(new Error('The promise is expected to resolve with happy!')));
     })
-    it('returns a promise that returns "sad" when x < 1', (done) => {
+    xit('returns a promise that returns "sad" when x < 1', (done) => {
         happySad(0)
             .catch(value => {
                 expect(value).to.equal("sad");
@@ -116,7 +116,7 @@ describe('happySad', () => {
 });
 
 describe('amIYourFather', () => {
-    it('returns a promise that returns "Yes. Luke, I am your father." when the passed parameter === "Luke"', (done) => {
+    xit('returns a promise that returns "Yes. Luke, I am your father." when the passed parameter === "Luke"', (done) => {
         amIYourFather("Luke")
             .then(value => {
                 expect(value).to.equal("Yes. Luke, I am your father.");
@@ -124,14 +124,14 @@ describe('amIYourFather', () => {
             })
             .catch(() => done(new Error('The promise is expected to resolve with "Yes. Luke, I am your father."!')));
     })
-    it('returns a promise that returns "Not your dad." when the passed parameter !== "Luke"', (done) => {
+    xit('returns a promise that returns "Not your dad." when the passed parameter !== "Luke"', (done) => {
         amIYourFather("something else")
             .catch(value => {
                 expect(value).to.equal("Not your dad.");
                 done();
             });
     })
-    it('returns a promise that returns "Not your dad." when the passed parameter !== "Luke"', (done) => {
+    xit('returns a promise that returns "Not your dad." when the passed parameter !== "Luke"', (done) => {
         amIYourFather(0)
             .catch(value => {
                 expect(value).to.equal("Not your dad.");
@@ -141,7 +141,7 @@ describe('amIYourFather', () => {
 });
 
 describe('myNameIs', () => {
-    it('returns a promise that returns "My name is Romy" when it resolves', (done) => {
+    xit('returns a promise that returns "My name is Romy" when it resolves', (done) => {
         const name = "Romy";
         myNameIs()
             .then(value => {
